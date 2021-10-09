@@ -1,0 +1,33 @@
+{
+    "name": "rc-project",
+    "repository": "https://github.com/jhoneybee/rc-grid.git",
+    "private": true,
+    "author": "jhoneybee <zhangjin19960908@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "start": "yarn workspace @lifhcp/rc-grid start",
+        "start:docs": "yarn workspace @lifhcp/rc-grid build && yarn workspace website start",
+        "build": "yarn workspace @lifhcp/rc-grid build",
+        "lint:script": "yarn workspace @lifhcp/rc-grid lint:script",
+        "build:storybook": "yarn workspace @lifhcp/rc-grid build-storybook",
+        "build:docs": "yarn workspace @lifhcp/rc-grid build && yarn workspace website build",
+        "test": "yarn workspace @lifhcp/rc-grid jest",
+        "test:codecov": "yarn workspace @lifhcp/rc-grid test:codecov"
+    },
+    "devDependencies": {
+        "husky": ">=6",
+        "lint-staged": "^11.0.0"
+    },
+    "workspaces": [
+        "packages/*",
+        "website"
+    ],
+    "resolutions": {
+        "@types/react": "^17.0.11"
+    },
+    "lint-staged": {
+        "**/*.{js,jsx,tsx,ts,less,json}": [
+            "prettier --write"
+        ]
+    }
+}
